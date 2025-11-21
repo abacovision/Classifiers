@@ -14,5 +14,11 @@ Just send a commit request or use the algorithm and share the link in the commun
 
 ### Personal links to contact me:
 
-***Instagram:*** sf.filipy
+***Instagram:*** abaco.ai
+***Twitter (x):*** oficialabaco
+
+### k-nearest neighbor concept
+
+#### Data exploration image:
+![Imagem_kNN](/k-NN/imgs/DataExploration.png)
 
