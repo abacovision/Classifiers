@@ -22,3 +22,11 @@ Just send a commit request or use the algorithm and share the link in the commun
 #### Data exploration image:
 ![Imagem_kNN](/k-NN/imgs/DataExploration.png)
 
+In this image above we can see the data being perfectly equal. They have the same len in the dataset.
+50% for 50%
+In the same image on third graph, the graphic show a perfectly linear separation.
+And in the first graphic, the image show us the mean in the array of features.
+
+This algorithm is case-based, looping and storaging all the data on memory. The performance of this algorithm is disgusting.
+
+This algorithm take time and resources to train, the cost is expansive. When i decided to train this model i wait about 3 hours just to train fill a matrix
