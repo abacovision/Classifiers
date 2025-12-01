@@ -38,16 +38,13 @@ def slope(x):
 
 
 #Inefficient algorithm
-def l2_distance(dataf, df_features):
-    df_shape = dataf.shape[0]
-    df_f_shape = df_features.shape[0]
-    dist = np.zeros((df_f_shape, df_shape), dtype=float)
-    for i in range(df_shape):
-        for x in range(df_f_shape):
-            i = df_features[x:].item
-            j = np.squeeze(np.asarray(df[x]))
-            l2 = np.sqrt(np.sum(j - i) ** 2)
-            dist [x:i] = l2
+def l2_distance(dataf):
+    num_test = dataf.shape[0]
+    dist = np.zeros(num_test, dtype=dataf.dtype)
+    for i in range(num_test):
+        l2 = np.sum(np.abs(df[i,:,1] - dataf), axis=1)
+        min_index = np.argmin(l2)
+        dist [i] = df_dp[min_index]
     return dist
 
 
@@ -66,11 +63,9 @@ df['RestingECG'] = df['RestingECG'].apply(eletrocardiogram)
 df_dp = df['HeartDisease']
 df.drop(['HeartDisease'], axis=1, inplace=True)
 df = df.apply(transform, axis=1)
-df = np.squeeze(np.asarray(df))
-
 
 #Insert Dataframes
-dists = l2_distance(df_dp[:10], df[:10])
+dists = l2_distance(df_dp[1,:])
 fig, (axs_1, axs_2, axs_3) = plt.subplots(3, 1)
 axs_1.plot(df, c=(0.132,0.71,0.255))
 axs_1.set_title('Features mean')
